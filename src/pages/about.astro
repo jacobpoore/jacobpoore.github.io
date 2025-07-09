@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Gallery from "../components/Gallery.jsx"
+---
+
+<Layout title="About Me">
+  <main>
+    <!-- Gallery Section -->
+    <Gallery client:visible />
+
+    <!-- Additional Content Section -->
+    <section class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 py-20 transition-colors duration-300">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center">My Story</h2>
+          
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Text Section -->
+            <div class="space-y-6">
+              <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Background</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                As a double major...
+              </p>
+              
+              <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Interests</h3>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Automotive Engineering
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  Simulation
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  Webdev
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                  Mechanics
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl transition-colors duration-300">
+              <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Quick Facts</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                  <span class="text-gray-600 dark:text-gray-400">Status</span>
+                  <span class="font-semibold text-gray-800 dark:text-white">Undergraduate Student</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                  <span class="text-gray-600 dark:text-gray-400">Major</span>
+                  <span class="font-semibold text-gray-800 dark:text-white">Physics/Engineering</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                  <span class="text-gray-600 dark:text-gray-400">Focus</span>
+                  <span class="font-semibold text-gray-800 dark:text-white">Automotive</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span class="text-gray-600 dark:text-gray-400">Goal</span>
+                  <span class="font-semibold text-gray-800 dark:text-white">Performance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-gray-200 dark:bg-gray-900 py-20 transition-colors duration-300">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-8">Let's Connect</h2>
+        <p class="text-xl text-gray-900 dark:text-gray-200 mb-12 max-w-2xl mx-auto">
+          Interested in collaborating or learning more about my work? 
+          I'd love to hear from you.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+            Contact
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
