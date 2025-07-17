@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Linkage Mechanism",
+    "slug": "cad-one",
+    "description": "Preliminary OnShape model of a 4-bar linkage for kinematic exploration.",
+    "detailedDescription": "This project contains an early-stage simulation of a 4-bar linkage using OnShape. The model includes basic joint constraints and initial motion studies, serving as a learning platform for simulating mechanical motion rather than a finalized design. Some kinematic behaviors have been explored, but the project is not yet refined for manufacturing or detailed analysis.",
+    "category": "cad",
+    "status": "in-progress",
+    "technologies": ["OnShape", "CAD", "Kinematic Exploration"],
+    "createdDate": "?",
+    "updatedDate": "2025-?",
+    "duration": "Work In Progress",
+    "tags": ["mechanical", "simulation", "learning"],
+    "links": {
+      "demo": "https://cad.onshape.com/documents/example1",
+      "documentation": "/docs/linkage-mechanism.pdf"
+    },
+    "features": [
+      "Basic 4-bar linkage sketch",
+      "Initial motion visualization",
+      "Exploration of joint behavior",
+      "OnShape constraint practice"
+    ]
+  },
+  {
+    "title": "Gearbox Assembly",
+    "slug": "cad-two",
+    "description": "Early CAD layout for a custom planetary gearbox assembly.",
+    "detailedDescription": "This is a conceptual assembly for a planetary gearbox, developed to practice part organization and spatial reasoning in OnShape. Initial gear placements and bearing considerations have been modeled, though no final tolerancing or detailed design verification has been completed. Intended as a stepping stone toward full gearbox integration.",
+    "category": "cad",
+    "status": "in-progress",
+    "technologies": ["OnShape", "CAD", "Assembly Design"],
+    "createdDate": "2023-09-10",
+     "updatedDate": "2025-?",
+    "duration": "Work In Progress",
+    "tags": ["gears", "bearings", "assembly", "practice"],
+    "links": {
+      "repository": "https://github.com/example/gearbox-assembly",
+      "documentation": "/docs/gearbox-design.pdf"
+    },
+    "features": [
+      "Basic planetary gear configuration",
+      "Initial bearing placement",
+      "Mounting interface drafts",
+      "Exploratory tolerance analysis"
+    ]
+  },
+  {
+    "title": "N-Body Physics Simulation",
+    "slug": "code-one",
+    "description": "Python simulator for 3-body problem using Euler-Cromer method.",
+    "detailedDescription": "This codebase includes an interactive Python script for simulating the 3-body problem using the Euler-Cromer integration method. The project focuses on learning and visualizing the non-linear behavior of gravitational systems. While a framework is in place for future integration methods and GUI features, most effort has gone into plotting trajectories and understanding system energy.",
+    "category": "code",
+    "status": "in-progress",
+    "technologies": ["Python", "NumPy", "Matplotlib"],
+    "createdDate": "?",
+     "updatedDate": "2025-?",
+    "duration": "Work In Progress",
+    "tags": ["physics", "simulation", "numerical-methods"],
+    "links": {
+      "repository": "https://github.com/example/n-body-simulation",
+      "demo": "https://nbody-sim.example.com",
+      "documentation": "/docs/n-body-physics.md"
+    },
+    "features": [
+      "Euler-Cromer integration",
+      "Trajectory visualization",
+      "Adjustable parameters",
+      "Energy tracking (partial)"
+    ]
+  },
+  {
+    "title": "Euler 3 Body Escape Threshold",
+    "slug": "code-two",
+    "description": "MATLAB-based exploratory study on escape conditions in 3-body systems.",
+    "detailedDescription": "This ongoing project investigates escape dynamics in the 3-body problem using MATLAB. It includes scripts to run batches of simulations under varying conditions. While a full Monte Carlo framework and statistical mapping are planned, the current focus has been on defining escape conditions, detecting threshold behavior, and plotting phase portraits for selected trajectories.",
+    "category": "code",
+    "status": "in-progress",
+    "technologies": ["MATLAB", "Numerical Simulation", "Phase Space Analysis"],
+    "createdDate": "?",
+     "updatedDate": "2025-?",
+    "duration": "Work In Progress",
+    "tags": ["mathematics", "chaos-theory", "research"],
+    "links": {
+      "repository": "https://github.com/example/euler-3body-threshold",
+      "paper": "/papers/escape-threshold-analysis.pdf",
+      "documentation": "/docs/matlab-analysis.md"
+    },
+    "features": [
+      "Escape condition analysis",
+      "Preliminary phase portraits",
+      "Batch simulation tools",
+      "Lyapunov-related visualization (in development)"
+    ]
+  },
+  {
+    "title": "Projectile Motion Educational Tool",
+    "slug": "code-three",
+    "description": "Interactive JS platform for teaching projectile motion concepts.",
+    "detailedDescription": "A frontend project designed to introduce students to the principles of projectile motion. The initial stages include basic parabolic motion with a simple UI for adjusting launch parameters. Though future plans include advanced features like wind and air resistance, current work is centered around core interactivity and graphing output using HTML Canvas and Chart.js.",
+    "category": "code",
+    "status": "in-progress",
+    "technologies": ["JavaScript", "HTML5 Canvas", "Chart.js"],
+    "createdDate": "?",
+    "updatedDate": "2025-?",
+    "duration": "Work In Progress",
+    "tags": ["education", "physics", "interactive", "frontend"],
+    "links": {
+      "demo": "https://projectile-edu.example.com",
+      "repository": "https://github.com/example/projectile-motion-edu",
+      "documentation": "/docs/educational-tool.md"
+    },
+    "features": [
+      "Basic projectile simulation",
+      "Parameter adjustment sliders",
+      "Live graphing of motion",
+      "Introductory-level tutorials (planned)"
+    ]
+  }
+]

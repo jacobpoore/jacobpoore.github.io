@@ -1,0 +1,96 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "slug": "f1-air-tunnels",
+      "title": "F1 Air Tunnels",
+      "excerpt": "Regulations on how the FIA regulates air tunnel development time in the name of competition. Is it working?",
+      "content": "With the relative narrowing of the field this year, Formula 1 has seen some of the most competitive racing in decades. However...",
+      "date": "Upcoming",
+      "time" : "WIP",
+      "tags": ["F1", "Air Tunnel", "automotive"],
+      "image": "16x9.svg"
+    },
+    {
+      "id": 2,
+      "slug": "gateway-to-jdm",
+      "title": "Gateway to JDM",
+      "excerpt": "Is the newest generation still interested in JDM?",
+      "content": "For many millennials and older Gen Z...",
+      "date": "Upcoming",
+      "time" : "WIP",
+      "tags": ["JDM", "automotive"],
+      "image": "16x9.svg"
+    },
+    {
+      "id": 3,
+      "slug": "legality-of-kei-trucks",
+      "title": "Legality of Kei Trucks",
+      "excerpt": "The fight for ownership across the USA.",
+      "content": "Many states are fighting against these nifty little vehicles. I personally love them. Why...",
+      "date": "Upcoming",
+      "time" : "WIP",
+      "tags": ["JDM", "Kei Cars"],
+      "image": "16x9.svg"
+    },
+    {
+      "id": 4,
+      "slug": "f1-air-tunnels",
+      "title": "F1 Air Tunnels",
+      "excerpt": "Regulations on how the FIA regulates air tunnel development time in the name of competition. Is it working?",
+      "content": "With the relative narrowing of the field this year, Formula 1 has seen some of the most competitive racing in decades. However...",
+      "date": "Upcoming",
+      "time" : "WIP",
+      "tags": ["F1", "Air Tunnel", "automotive"],
+      "image": "16x9.svg"
+    }
+  ],
+  "physics": [
+    {
+      "id": 5,
+      "slug": "how-to-make-good-physical-simulation",
+      "title": "How to Make a Good Physical Simulation?",
+      "excerpt": "When is enough, enough?",
+      "content": "Experimenting with my first couple of simulations has taught me that the line between 'realistic enough' and 'computationally excessive' is thinner...",
+      "date": "Upcoming",
+      "time" : "WIP",
+      "tags": ["simulation", "MATLAB", "particles"],
+      "image": "16x9.svg"
+    },
+    {
+      "id": 5,
+      "slug": "physics-to-engineering-pipeline",
+      "title": "Physics to Engineering Pipeline",
+      "excerpt": "Many universities offer master's programs for undergraduate physics students. Is there a gap?",
+      "content": "As a physicist who goes to a liberal arts college, I've",
+      "date": "Upcoming",
+      "time" : "WIP",
+      "tags": ["career", "physics", "engineering"],
+      "image": "16x9.svg"
+    }
+  ],
+  "retro-tech": [
+    {
+      "id": 6,
+      "slug": "guardians-galaxy-sony-walkman",
+      "title": "Guardians of the Galaxy and the Sony Walkman",
+      "excerpt": "Most iconic scenes.",
+      "content": "I recently got a Walkman as part of an initiative to lower my screen time. This...",
+      "date": "Upcoming",
+      "time" : "WIP",
+      "tags": ["walkman", "cassette", "Guardians of the Galaxy"],
+      "image": "16x9.svg"
+    },
+    {
+      "id": 7,
+      "slug": "modern-retro-gaming",
+      "title": "Modern Retro Gaming?",
+      "excerpt": "Obsolescence of Modern Videos (STGM).",
+      "content": "The Stop Killing Games Movement has highlighted a fundamental problem with modern gaming:...",
+      "date": "Upcoming",
+      "time" : "WIP",
+      "tags": ["retro gaming", "Stop Killing Games", "Digital Licensing"],
+      "image": "16x9.svg"
+    }
+  ]
+}

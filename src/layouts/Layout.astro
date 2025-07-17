@@ -1,0 +1,37 @@
+---
+// src/layouts/Layout.astro
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const { currentPage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jacob Poore | Portfolio</title>
+    <script is:inline>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDark = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
+        if (isDark) document.documentElement.classList.add('dark');
+      })();
+    </script>
+  </head>
+
+  <body class="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out antialiased">
+    <Navbar client:idle />
+    
+    <main class="flex-1 relative">
+      <slot />
+    </main>
+    
+    <Footer />
+  </body>
+</html>

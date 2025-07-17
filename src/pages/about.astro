@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Gallery from "../components/Gallery.jsx"
+import "../styles/global.css"
+---
+
+<Layout title="About Me">
+<main>
+  <!-- Gallery Section -->
+  <Gallery client:visible />
+
+  <!-- Main Content Section -->
+  <section class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 py-20 transition-colors duration-300">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 text-center">From Automotive to Advanced Engineering</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed text-center mb-16">
+          My journey from an ASE Master Technician to a computational physics enthusiast is driven by a singular passion: understanding and building complex systems. My hands-on automotive background provides a unique perspective on the theoretical challenges of modern engineering.
+        </p>
+
+        {/* Core Experience Section */}
+        <div class="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl transition-colors duration-300">
+          <h3 class="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">Applying Practical Skills to New Frontiers</h3>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <ul class="space-y-4 text-lg text-gray-600 dark:text-gray-400">
+                <li><strong>Computational Simulations</strong> - Leveraging insights from vehicle dynamics to model complex physical phenomena.</li>
+                <li><strong>Nonlinear Physics</strong> - Exploring chaotic systems with an appreciation for real-world mechanical unpredictability.</li>
+                <li><strong>System Diagnostics & Optimization</strong> - Applying a systematic troubleshooting approach, honed in automotive repair, to advanced engineering problems.</li>
+              </ul>
+              <p class="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+                My seven years as an ASE Master Technician provided a robust foundation in mechanical and electrical systems. This practical expertise now fuels my academic pursuits in computational physics and my drive to solve intricate engineering challenges.
+              </p>
+            </div>
+            <div class="flex justify-center">
+              <img src="/Portrait_placeholder.svg?height=300&width=400" alt="Engineering Application" class="rounded-lg shadow-lg object-cover w-full h-auto max-w-sm" />
+            </div>
+          </div>
+        </div>
+
+        {/* Technical Skills Section */}
+        <div class="mb-16">
+          <h3 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">Key Technical Skills</h3>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div>
+              <h4 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Software & Simulation</h4>
+              <ul class="space-y-4 text-lg text-gray-600 dark:text-gray-400">
+                <li>CAD Modeling (SolidWorks, OnShape)</li>
+                <li>Computational Physics (Python, Matlab)</li>
+                <li>Web Development (HTML, CSS)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Hardware & Practical Application</h4>
+              <ul class="space-y-4 text-lg text-gray-600 dark:text-gray-400">
+                <li>Precision Machining (3D-Printing, CNC)</li>
+                <li>Automotive Systems <a class="text-blue-500 hover:underline" href="https://www.ase.com/test-series" target="_blank">(ASE A1-A8)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-gray-200 dark:bg-gray-900 py-20 transition-colors duration-300">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-8">Let's Connect</h2>
+      <p class="text-xl text-gray-900 dark:text-gray-200 mb-12 max-w-2xl mx-auto">
+        Interested in discussing how automotive insights apply to computational physics, or collaborating on a new mechanical design? I'm always excited to connect with fellow engineers and innovators.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+          Contact
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+</Layout>

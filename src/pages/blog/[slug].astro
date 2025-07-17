@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import blogData from '../../../blogData.json';
+
+// Get all posts from all categories
+const allPosts = Object.values(blogData).flat();
+
+// Debug logging
+console.log('Total posts found:', allPosts.length);
+console.log('Post slugs:', allPosts.map(p => p.slug));
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(blogData).flat();
+  
+  const paths = allPosts.map(post => {
+    console.log('Generating path for:', post.slug);
+    return {
+      params: { slug: post.slug },
+      props: { post },
+    };
+  });
+  
+  console.log('Generated paths:', paths.map(p => p.params.slug));
+  return paths;
+}
+
+const { post } = Astro.props;
+const { slug } = Astro.params;
+
+console.log('Current slug:', slug);
+console.log('Post found:', !!post);
+---
+
+{post ? (
+  <Layout>
+    <div class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
+      <!-- Traditional Article Header -->
+      <header class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          <nav class="mb-8">
+            <a 
+              href="/blog" 
+              class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 font-medium uppercase tracking-wide transition-colors duration-200"
+            >
+              ← Back to Articles
+            </a>
+          </nav>
+          
+          <div class="max-w-3xl">
+            {/* Article Metadata */}
+            <div class="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400 mb-6 pb-4 border-b border-gray-100 dark:border-gray-700">
+              <span class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-3 py-1 text-xs font-bold uppercase tracking-wide">
+                {post.tags && post.tags[0] ? post.tags[0] : 'Article'}
+              </span>
+              <time class="font-medium">
+                {post.date === 'Upcoming' ? 'Coming Soon' : post.date}
+              </time>
+              {post.time && (
+                <>
+                  <span>•</span>
+                  <span class="font-medium">{post.time} read</span>
+                </>
+              )}
+            </div>
+            
+            {/* Traditional News Headline */}
+            <h1 class="text-5xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">
+              {post.title}
+            </h1>
+            
+            {/* News Subheading */}
+            <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light border-l-4 border-gray-300 dark:border-gray-600 pl-6">
+              {post.excerpt}
+            </p>
+          </div>
+        </div>
+      </header>
+
+      {/* Article Image */}
+      {post.image && (
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <img 
+            src={`/${post.image}`}
+            alt={post.title}
+            class="w-full h-64 md:h-96 object-cover border border-gray-200 dark:border-gray-700"
+          />
+        </div>
+      )}
+
+      <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <article class="max-w-3xl">
+          {/* Traditional Article Body */}
+          <div class="prose prose-lg dark:prose-invert max-w-none mb-12">
+            {post.content && post.content.split('\n\n').map((paragraph) => (
+              <p class="text-gray-800 dark:text-gray-200 mb-6 leading-relaxed font-serif text-lg">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          {/* Article Footer */}
+          <footer class="border-t-2 border-gray-200 dark:border-gray-700 pt-8">
+            {/* Tags Section */}
+            {post.tags && post.tags.length > 0 && (
+              <div class="mb-8">
+                <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
+                  Related Topics
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  {post.tags.map((tag, tagIndex) => (
+                    <span class="text-sm px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium uppercase tracking-wide">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Publication Info */}
+            <div class="text-center py-6 border-t border-gray-100 dark:border-gray-700">
+              <p class="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                Published in Applied Curiosity
+              </p>
+              <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                {post.date === 'Upcoming' ? 'Coming Soon' : `Published on ${post.date}`}
+              </p>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </Layout>
+) : (
+  <Layout>
+    <div class="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
+      <div class="text-center max-w-md">
+        <h1 class="text-3xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
+          Article Not Found
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          The requested article could not be located in our archives.
+        </p>
+        <a 
+          href="/blog" 
+          class="text-gray-900 dark:text-gray-100 hover:underline font-medium uppercase tracking-wide"
+        >
+          ← Return to Applied Curiosity
+        </a>
+      </div>
+    </div>
+  </Layout>
+)}

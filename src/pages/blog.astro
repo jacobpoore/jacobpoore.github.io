@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Dropdown from '../components/Dropdown.jsx';
+import blogData from '../../blogData.json';
+import "../styles/global.css";
+---
+
+<Layout>
+  <div class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
+    <!-- Traditional Newspaper Header -->
+    <header class="border-b-4 border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900 py-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center border-b-2 border-gray-300 dark:border-gray-600 pb-6 mb-6">
+          <h1 class="text-6xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-2 tracking-tight">
+            Applied Curiosity
+          </h1>
+          <div class="flex items-center justify-center space-x-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
+            <span>Vol. 1, No. 1</span>
+            <span>•</span>
+            <time>{new Date().toLocaleDateString('en-US', { 
+              weekday: 'long', 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</time>
+            <span>•</span>
+            <span>Latest in Technology & Physics</span>
+          </div>
+        </div>
+        <p class="text-center text-gray-700 dark:text-gray-300 text-lg font-light max-w-3xl mx-auto">
+          Exploring the intersection of technology, physics, and automotive culture
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      {
+        Object.entries(blogData).map(([category, posts], categoryIndex) => (
+          <section class="mb-20">
+            <!-- Traditional Section Header -->
+            <div class="border-b-2 border-gray-900 dark:border-gray-100 mb-10">
+              <h2 class="text-4xl font-serif font-bold text-gray-900 dark:text-gray-100 pb-3 uppercase tracking-wide">
+                {category.replace('-', ' ')}
+              </h2>
+              <div class="w-16 h-1 bg-gray-900 dark:bg-gray-100 mb-2"></div>
+            </div>
+
+            <!-- News Article Grid -->
+            <div class="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
+              {
+                posts.map((post, postIndex) => (
+                  <article class="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300">
+                    {/* Traditional News Image */}
+                    {post.image && (
+                      <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700">
+                        <img 
+                          src={`/${post.image}`}
+                          alt={post.title}
+                          class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
+
+                    <div class="p-6">
+                      {/* News Header with Category & Date */}
+                      <header class="mb-4">
+                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-gray-100 dark:border-gray-700">
+                          <span class={`text-xs font-bold uppercase tracking-wider px-2 py-1 ${
+                            category === 'cars' 
+                              ? 'bg-red-600 text-white' 
+                              : category === 'physics' 
+                              ? 'bg-blue-600 text-white' 
+                              : 'bg-purple-600 text-white'
+                          }`}>
+                            {category.replace('-', ' ')}
+                          </span>
+                          <div class="text-right">
+                            <time class="text-xs text-gray-500 dark:text-gray-400 font-medium block">
+                              {post.date}
+                            </time>
+                            {post.time && (
+                              <span class="text-xs text-gray-400 dark:text-gray-500">
+                                {post.time} read
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        
+                        {/* Traditional News Headline */}
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 leading-tight mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200">
+                          {post.title}
+                        </h3>
+                        
+                        {/* News Excerpt */}
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed font-light line-clamp-3">
+                          {post.excerpt}
+                        </p>
+                      </header>
+
+                      {/* Traditional Tags as Keywords */}
+                      <div class="mb-4">
+                        <div class="flex flex-wrap gap-1">
+                          {
+                            post.tags.slice(0, 3).map((tag, tagIndex) => (
+                              <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-medium uppercase tracking-wide">
+                                {tag}
+                              </span>
+                            ))
+                          }
+                        </div>
+                      </div>
+
+                      {/* Traditional "Continue Reading" */}
+                      <footer class="pt-3 border-t border-gray-100 dark:border-gray-700">
+                        <a href={`/blog/${post.slug}`} 
+                        class="text-gray-900 dark:text-gray-100 font-medium text-sm uppercase tracking-wide hover:underline transition-all duration-200">
+                        Continue Reading →</a>
+                      </footer>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
+
+            {/* Section Divider */}
+            {categoryIndex < Object.entries(blogData).length - 1 && (
+              <div class="mt-16 flex justify-center">
+                <div class="w-32 h-px bg-gray-400 dark:bg-gray-600"></div>
+              </div>
+            )}
+          </section>
+        ))
+      }
+
+      <!-- Traditional Newspaper Footer -->
+      <footer class="border-t-2 border-gray-900 dark:border-gray-100 pt-8 mt-20">
+        <div class="text-center">
+          <p class="text-gray-700 dark:text-gray-300 font-serif text-lg mb-2">
+            Applied Curiosity
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">
+            Published with passion • Updated regularly • Est. 2025
+          </p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <style>
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</Layout>
